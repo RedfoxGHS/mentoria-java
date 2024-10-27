@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 public interface ClienteRepository extends JpaRepository<Cliente, UUID> {
+    boolean existsByCpf(String numeroCpf);
 }

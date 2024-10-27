@@ -1,6 +1,8 @@
 package br.com.coderbank.portalcliente.entities;
 
+import br.com.coderbank.portalcliente.entities.enums.Status;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.UUID;
 
@@ -25,7 +27,24 @@ public class Cliente {
     private Integer idade;
 
     @Column
-    private String endereco;
+    private Status status;
+
+    @Column
+    private String enderecoCompleto;
+
+    @Column
+    private String criadoPeloUsuario;
+
+    @Column
+    @CreationTimestamp
+    private String criadoDataEHora;
+
+    @Column
+    private String editadoPeloUsuario;
+
+    @Column
+    @CreationTimestamp
+    private String editadoDataEHora;
 
     public UUID getId() {
         return id;
@@ -67,11 +86,51 @@ public class Cliente {
         this.idade = idade;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getEnderecoCompleto() {
+        return enderecoCompleto;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setEnderecoCompleto(String enderecoCompleto) {
+        this.enderecoCompleto = enderecoCompleto;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public String getCriadoPeloUsuario() {
+        return criadoPeloUsuario;
+    }
+
+    public void setCriadoPeloUsuario(String criadoPeloUsuario) {
+        this.criadoPeloUsuario = criadoPeloUsuario;
+    }
+
+    public String getCriadoDataEHora() {
+        return criadoDataEHora;
+    }
+
+    public void setCriadoDataEHora(String criadoDataEHora) {
+        this.criadoDataEHora = criadoDataEHora;
+    }
+
+    public String getEditadoPeloUsuario() {
+        return editadoPeloUsuario;
+    }
+
+    public void setEditadoPeloUsuario(String editadoPeloUsuario) {
+        this.editadoPeloUsuario = editadoPeloUsuario;
+    }
+
+    public String getEditadoDataEHora() {
+        return editadoDataEHora;
+    }
+
+    public void setEditadoDataEHora(String editadoDataEHora) {
+        this.editadoDataEHora = editadoDataEHora;
     }
 }
